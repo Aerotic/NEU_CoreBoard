@@ -17,24 +17,35 @@ Library Manager: ArmAr.exe V5.06 update 3 (build 300)
 Hex Converter:   FromElf.exe V5.06 update 3 (build 300)
 CPU DLL:         SARMCM3.DLL V5.21a
 Dialog DLL:      DCM.DLL V1.13.8.0
-Target DLL:      UL2CM3.DLL V1.158.5.0
+Target DLL:      CMSIS_AGDI.dll V1.26.5.0
 Dialog DLL:      TCM.DLL V1.14.14.0
  
 <h2>Project:</h2>
 C:\Users\Aero\Desktop\NEU_CoreBoard\trunk\NEU_CoreBoard.uvprojx
-Project File Date:  01/27/2018
+Project File Date:  04/07/2018
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 3 (build 300)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'NEU_CoreBoard'
-".\Objects\NEU_CoreBoard.axf" - 0 Error(s), 0 Warning(s).
+compiling usart2.c...
+BSP\usart2.h(7): warning:  #1-D: last line of file ends without a newline
+  #endif
+BSP\usart2.c(74): warning:  #1-D: last line of file ends without a newline
+  }
+BSP\usart2.c(68): warning:  #177-D: variable "i" was declared but never referenced
+  	u16 i;
+BSP\usart2.c: 3 warnings, 0 errors
+linking...
+Program Size: Code=4372 RO-data=424 RW-data=40 ZI-data=1024  
+FromELF: creating hex file...
+".\Objects\NEU_CoreBoard.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   C:\Users\Aero\Desktop\NEU_CoreBoard\trunk\RTE
   C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

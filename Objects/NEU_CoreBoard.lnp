@@ -35,7 +35,8 @@
 ".\objects\main.o"
 ".\objects\stm32f4xx_it.o"
 ".\objects\usart1.o"
---strict --scatter ".\Objects\NEU_CoreBoard.sct"
+".\objects\usart2.o"
+--library_type=microlib --strict --scatter ".\Objects\NEU_CoreBoard.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\NEU_CoreBoard.map" -o .\Objects\NEU_CoreBoard.axf
