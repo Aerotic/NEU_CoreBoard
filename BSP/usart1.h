@@ -3,7 +3,6 @@
 
 #include "stm32f4xx_conf.h"
 #include <stdio.h>
-
 void Usart1_Config(void);
 void Usart1_SendChar(unsigned char b);
 int fputc(int ch, FILE *f);
