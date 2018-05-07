@@ -36,6 +36,7 @@
 ".\objects\stm32f4xx_it.o"
 ".\objects\usart1.o"
 ".\objects\usart2.o"
+".\objects\exti.o"
 --library_type=microlib --strict --scatter ".\Objects\NEU_CoreBoard.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

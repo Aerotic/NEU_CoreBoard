@@ -779,6 +779,16 @@
               <FileType>5</FileType>
               <FilePath>.\BSP\usart2.h</FilePath>
             </File>
+            <File>
+              <FileName>exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\BSP\exti.c</FilePath>
+            </File>
+            <File>
+              <FileName>exti.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\BSP\exti.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
