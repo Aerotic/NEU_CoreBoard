@@ -10,13 +10,8 @@
 
 int main(void)
 {	
-	Usart2_Config();
-//	Usart2_SendChar(0xff);
-//	Usart2_SendChar(0xff);
-//	Usart2_SendChar(0xff);
-//	Usart2_SendChar(0xff);
-//	Usart2_SendChar(0xff);
-	printf("Successfully print string via serial");
+	USART2_Config();
+	printf("Hello World!");
 	while(1){
 	}
 }

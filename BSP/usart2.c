@@ -1,8 +1,6 @@
 #include "usart2.h"
-//??????,??printf??,??????use MicroLIB	  
 #if 1
-#pragma import(__use_no_semihosting)             
-//??????????                 
+#pragma import(__use_no_semihosting)                             
 struct __FILE 
 { 
 	int handle; 
@@ -10,18 +8,15 @@ struct __FILE
 }; 
 FILE __stdout;       
     
-//int _sys_exit(int x) 
-//{ 
-//	x = x; 
-//} 
-//???fputc?? 
 int fputc(int ch, FILE *f)
 {      
-	while((USART2->SR&0X40)==0);//????,??????   
+	while((USART2->SR&0X40)==0);  
     USART2->DR = (u8) ch;      
 	return ch;
 }
 #endif 
+
+u8 USART_RX_TEST;
 void USART2_Config()
 {
 	USART_InitTypeDef USART_InitStructure;
@@ -51,7 +46,7 @@ void USART2_Config()
 	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
 	USART_Init(USART2,&USART_InitStructure);
   USART_Cmd(USART2,ENABLE);
-	USART_ITConfig(USART2,USART_IT_IDLE,ENABLE);  
+	USART_ITConfig(USART2,USART_IT_RXNE,ENABLE);  
 	NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;
@@ -61,9 +56,11 @@ void USART2_Config()
 }
 void USART2_IRQHandler(void)
 {
-	if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET)
-	{
-		//USART_ClearFlag(USART2, USART_FLAG_TC);
-		USART_ClearITPendingBit(USART2, USART_IT_RXNE);
+	if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET){
+			USART_RX_TEST = USART_ReceiveData(USART2);
+			printf("Received data is %c\n",USART_RX_TEST);		
+		USART_ClearITPendingBit(USART2,USART_IT_RXNE);
 	}
+//				USART_RX_TEST = USART_GetITStatus(USART2, USART_IT_RXNE);//USART_ReceiveData(USART2);
+//	USART_RX_TEST += 3;
 }
