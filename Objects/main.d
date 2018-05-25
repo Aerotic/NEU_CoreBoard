@@ -19,5 +19,3 @@
 .\objects\main.o: .\STM32F4 StdLib\stm32f4xx_tim.h
 .\objects\main.o: .\STM32F4 StdLib\stm32f4xx_usart.h
 .\objects\main.o: .\STM32F4 StdLib\misc.h
-.\objects\main.o: .\BSP\usart2.h
-.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
